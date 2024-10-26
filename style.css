@@ -1,0 +1,227 @@
+*{
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./fonts/nbc.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MyCustomFont', sans-serif;
+  background-image: url("./image/font20.jpg");
+
+
+}
+
+
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-board {
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-image: url("./image/fondo13.jpg");
+  
+
+  background-size: cover;
+}
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  border: 2px solid white; /* Borde blanco */
+  border-radius: 8px; /* Esquinas redondeadas */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+  padding: 10px; /* Espacio interno para que no esté pegado al borde */
+}
+
+.score-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.score-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: yellow; /* Hacemos la puntuación en amarillo para destacarla */
+}
+
+
+#game-over {
+  overflow: hidden;
+  position: absolute;
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; 
+  z-index: 1;
+  width: 500px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.89); 
+  border: 2px solid #333; /* Borde oscuro */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.final-score {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#finalScoreValue {
+  display: inline-block; /* Para que ocupe espacio y tenga estilo */
+  padding: 10px;
+ 
+  border-radius: 5px; /* Esquinas redondeadas */
+  margin: 5px 0; /* Margen superior e inferior */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo claro para destacar el puntaje */
+}
+
+#score-form {
+  margin: 20px 0;
+  text-align: center; /* Centrar texto */
+}
+
+#score-form input[type="text"] {
+  padding: 10px;
+  border: 2px solid white; /* Borde blanco */
+  border-radius: 5px;
+  width: 150px; /* Ancho del campo de texto */
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo claro para el campo */
+  color: white; /* Texto en blanco */
+}
+
+#score-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: white; /* Fondo blanco para el botón */
+  color: black; /* Texto negro */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px; /* Espaciado entre el campo y el botón */
+}
+
+#score-form button:hover {
+  background-color: #ddd; /* Cambio de color al pasar el ratón */
+}
+
+#highScoreTable {
+  margin-top: 20px;
+  border-collapse: collapse; /* Colapsar bordes */
+  width: 100%; /* Tabla ocupa todo el ancho */
+}
+
+#highScoreTable th, #highScoreTable td {
+  padding: 10px;
+  color: white;
+  text-align: center; /* Centrando texto */
+}
+#highScoreTable {
+  display: none; 
+  width: 260px;/* Ocultar la tabla inicialmente */
+}
+
+/* Estilo para el encabezado */
+#highScoreTable th {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo claro para encabezados */
+  color: white; /* Texto blanco en encabezados */
+  font-weight: bold;
+}
+
+/* Alternar fondo de las filas */
+#highScoreTable tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05); /* Fila par con fondo claro */
+}
+
+#highScoreTable tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fila resaltada al pasar el ratón */
+}
+
+
+
+
+.start-btn {
+  background-color: #000000c7;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    text-align: center;
+    font-family: 'MyCustomFont';
+    font-size: 20px;
+    position: absolute; /* Posición absoluta para centrar */
+    left: 10%; 
+    top: 40%;/* Centrar horizontalmente */
+    transform: translateX(-50%);
+    animation: scaleButton 0.5s infinite alternate;
+}
+
+.restart-btn{
+  background-color: #000000c7;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    text-align: center;
+    font-family: 'MyCustomFont';
+    font-size: 20px;
+    position: absolute; /* Posición absoluta para centrar */
+    left: 5%; 
+    top: 5%;/* Centrar horizontalmente */
+    transform: translateX(-50%);
+    animation: scaleButton 0.5s infinite alternate;
+}
+@keyframes scaleButton {
+  from {
+      transform: scale(1); /* Tamaño original */
+  }
+  to {
+      transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+}
+
+
+.start-btn:focus {
+  outline: none;
+}

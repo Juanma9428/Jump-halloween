@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/nightmare-before-christmas" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="game-board">
+            <button id="start-btn" class="start-btn">START GAME!</button>
+          </div>
+          <div id="game-over">
+            <button id="restart-btn" class="restart-btn">RESTART</button>
+            <h2>GAME OVER</h2>
+            <p class="final-score">FINAL SCORE &nbsp:&nbsp</span><span id="finalScoreValue"></span> </p>
+          
+            <form action="submit" id="score-form">
+                <h3> Enter you name </h3>
+                <input type="text" name="name">
+                <button type="submit">Save</button>
+            </form>
+            <table id="highScoreTable">
+                <thead>
+                  <tr>
+                    <th>PLAYER</th>
+                    <th>SCORE</th>
+                  </tr>
+                </thead>
+                <tbody></tbody> <!-- Los puntajes se agregarán aquí -->
+              </table>
+             
+          </div>
+        </div>
+
+       
+        <script src="js/block.js"></script>
+        <script src="js/constante"></script>
+        <script src="js/background.js"></script>
+        <script src="js/bat.js"></script>
+        <script src="js/ghostEnemy.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/score.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/main.js"></script>
+
+
+        <audio id="bg-sound" src="sounds/This-Is-Halloween-8bit.mp3" loop></audio>
+        <audio id="go-sound" src="sounds/game-over.mp3" ></audio>
+        
+    
+</body>
+</html>
